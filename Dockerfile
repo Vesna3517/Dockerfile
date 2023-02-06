@@ -5,7 +5,7 @@ RUN apt install tomcat9 -y
 RUN apt install maven -y
 RUN apt install git -y
 EXPOSE 8888
-RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
-RUN cd boxfuse-sample-java-war-hello
+RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git /usr/src/boxfuse
+RUN cd /usr/src/boxfuse
 RUN mvn package
-CMD ["boxfuse run target/hello-1.0.war"]
+CMD ["boxfuse run /usr/src/boxfuse/target/hello-1.0.war"]
